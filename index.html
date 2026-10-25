@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>テマヘラシ｜GASとスプレッドシートで業務を自動化</title>
+<meta name="description" content="Googleスプレッドシート・Googleフォーム・GASで、集計・転記・日報・勤怠・請求書づくりなどの手作業を自動化します。月額0円で使える仕組みを作ってお渡しします。">
+<meta property="og:title" content="テマヘラシ｜その手作業、自動にします">
+<meta property="og:description" content="スプレッドシート・GAS・生成AIで、毎日の手作業を自動化。触って試せるデモつきの制作例を掲載しています。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/thumb-gas.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/note-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top"><img src="assets/note-icon.png" alt="" width="32" height="32"><span>テマ<b>ヘラシ</b></span></a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#demo">体験デモ</a>
+    <a href="#works">制作例</a>
+    <a href="#service">できること</a>
+    <a href="#flow">進め方</a>
+    <a href="#faq">よくある質問</a>
+    <a class="btn btn-sm" href="#contact">相談する</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="メニュー" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <p class="pill">Googleスプレッドシート × GAS × 生成AI</p>
+      <h1>その手作業、<br><span class="hl" id="heroWord">自動</span>にします</h1>
+      <p class="lead">集計、転記、日報、勤怠、請求書づくり。<br>毎日くり返している作業を、いつものGoogleのツールの中で自動で動く仕組みに変えます。</p>
+      <div class="hero-cta">
+        <a class="btn" href="#demo">デモを触ってみる</a>
+        <a class="btn btn-ghost" href="#contact">相談する</a>
+      </div>
+      <ul class="badges">
+        <li>月額0円で運用</li><li>スマホから入力</li><li>納品後2週間 無料修正</li>
+      </ul>
+    </div>
+
+    <div class="sheet-window" aria-hidden="true">
+      <div class="sheet-bar"><i></i><i></i><i></i><span>月次集計.gsheet</span></div>
+      <div class="sheet-tool">
+        <span class="fx">fx</span><span class="formula" id="heroFormula">=QUERY(日報!A:F, ...)</span>
+      </div>
+      <table class="sheet" id="heroSheet">
+        <thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <div class="sheet-foot">
+        <button class="run" id="heroRun" tabindex="-1">▶ 自動集計</button>
+        <span class="status" id="heroStatus">日報を受信中…</span>
+      </div>
+      <div class="toast" id="heroToast">📧 管理者に通知しました</div>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#pain">scroll</a>
+</section>
+
+<!-- ===== Pain ===== -->
+<section class="section" id="pain">
+  <div class="wrap">
+    <p class="eyebrow">こんな作業、ありませんか</p>
+    <h2>人がやらなくていい作業は、<br class="sp">仕組みに任せる</h2>
+    <div class="pain-grid">
+      <article class="pain reveal"><span class="emoji">📝</span><h3>紙やLINEの報告を<br>Excelに打ち直している</h3><p>入力はスマホのフォームに。届いた内容はそのまま表に入ります。</p></article>
+      <article class="pain reveal"><span class="emoji">🧮</span><h3>月末の集計に<br>まとまった時間がかかる</h3><p>人ごと・月ごとの集計は、ボタン1つか自動実行で作ります。</p></article>
+      <article class="pain reveal"><span class="emoji">📄</span><h3>同じ書類を<br>毎回手で作っている</h3><p>請求書や明細のPDFを、表のデータから自動で作ってメールで送ります。</p></article>
+      <article class="pain reveal"><span class="emoji">🔔</span><h3>出し忘れや異常に<br>気づくのが遅れる</h3><p>未提出の人や「異常あり」の報告があれば、その場でメールが届きます。</p></article>
+    </div>
+
+    <div class="compare reveal">
+      <div class="col before">
+        <p class="tag">いま</p>
+        <ol>
+          <li>紙の日報を集める</li><li>Excelに打ち直す</li><li>人ごとに並べ替えて合計</li><li>打ち間違いを見直す</li><li>請求書を1枚ずつ作る</li>
+        </ol>
+      </div>
+      <div class="arrow">→</div>
+      <div class="col after">
+        <p class="tag">自動化のあと</p>
+        <ol>
+          <li>スマホで入力してもらう</li><li>集計と書類は自動でできあがる</li>
+        </ol>
+        <p class="note">人がやるのは「入力」と「確認」だけ。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Demo ===== -->
+<section class="section section-dark" id="demo">
+  <div class="wrap">
+    <p class="eyebrow">体験デモ</p>
+    <h2>実際の動きを、<br class="sp">ここで触って試せます</h2>
+    <p class="sub">制作例の仕組みを、ブラウザで動く形に縮めて再現しました。データはすべて見本です（入力した内容はどこにも送信されません）。</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" role="tab" data-tab="kintai">勤怠・給与</button>
+      <button class="tab" role="tab" data-tab="nippo">日報・月次集計</button>
+      <button class="tab" role="tab" data-tab="meibo">名簿の突き合わせ</button>
+    </div>
+
+    <!-- Demo 1 -->
+    <div class="demo active" id="demo-kintai">
+      <div class="demo-grid">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <p class="phone-title">出退勤の登録</p>
+          <label>スタッフ
+            <select id="kStaff">
+              <option value="山田 一郎">山田 一郎（時給1,300円）</option>
+              <option value="佐藤 花子">佐藤 花子（時給1,400円）</option>
+              <option value="鈴木 次郎">鈴木 次郎（時給1,300円）</option>
+            </select>
+          </label>
+          <div class="row2">
+            <label>出勤<input type="time" id="kIn" value="09:00"></label>
+            <label>退勤<input type="time" id="kOut" value="18:00"></label>
+          </div>
+          <label>休憩（分）<input type="number" id="kBreak" value="60" min="0" step="15"></label>
+          <button class="btn btn-block" id="kSubmit">送信する</button>
+          <p class="hint">日付をまたぐ勤務（22:00→翌5:00など）もOK</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><span>ダッシュボード</span><span class="live">● 自動更新</span></div>
+          <div class="kpis">
+            <div class="kpi"><small>登録件数</small><b id="kCount">0件</b></div>
+            <div class="kpi"><small>今月の人件費</small><b id="kTotal">0円</b></div>
+          </div>
+          <table class="tbl">
+            <thead><tr><th>氏名</th><th class="r">日数</th><th class="r">稼働</th><th class="r">給与</th></tr></thead>
+            <tbody id="kBody"></tbody>
+          </table>
+          <p class="tbl-note">左のフォームから送信すると、勤怠シートに記録され、この表が計算し直されます。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 2 -->
+    <div class="demo" id="demo-nippo">
+      <div class="demo-grid">
+        <div class="panel">
+          <div class="panel-head"><span>日報シート（フォームの回答）</span><span class="mono" id="nRows">8行</span></div>
+          <table class="tbl tbl-sm">
+            <thead><tr><th>日付</th><th>運転者</th><th class="r">距離km</th><th class="r">個数</th><th>異常</th></tr></thead>
+            <tbody id="nRaw"></tbody>
+          </table>
+          <div class="btn-row">
+            <button class="btn btn-ghost-dark btn-sm" id="nAdd">＋ 日報を1件追加</button>
+            <button class="btn btn-sm" id="nRun">月次集計を作る</button>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><span>月次集計（10月）</span><span class="mono" id="nTime"></span></div>
+          <table class="tbl">
+            <thead><tr><th>運転者</th><th class="r">稼働日数</th><th class="r">距離km</th><th class="r">個数</th></tr></thead>
+            <tbody id="nSum"><tr><td colspan="4" class="empty">「月次集計を作る」を押してください</td></tr></tbody>
+          </table>
+          <div class="mail" id="nMail" hidden>
+            <p class="mail-h">📧 管理者へのメール</p>
+            <p id="nMailBody"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 3 -->
+    <div class="demo" id="demo-meibo">
+      <div class="demo-grid three">
+        <div class="panel">
+          <div class="panel-head"><span>受講者名簿（Excel）</span></div>
+          <ul class="names" id="mRoster"></ul>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><span>報告書フォームの回答</span></div>
+          <ul class="names" id="mForm"></ul>
+          <p class="tbl-note">全角・半角、空白、中黒（・）がばらばらでも照合します。</p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><span>結果</span></div>
+          <div id="mResult"><p class="empty">「突き合わせる」を押してください</p></div>
+          <button class="btn btn-sm btn-block" id="mRun">突き合わせる</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Works ===== -->
+<section class="section" id="works">
+  <div class="wrap">
+    <p class="eyebrow">制作例</p>
+    <h2>これまでに作った仕組み</h2>
+    <p class="sub">募集されていた業務や、身近な現場の困りごとをもとに自主制作したものです。お客さまの業務に合わせて作り変えてお渡しします。</p>
+
+    <div class="works">
+      <article class="work reveal">
+        <div class="work-img"><img src="assets/portfolio-kintai.png" alt="勤怠管理・給与計算の画面イメージ" loading="lazy"></div>
+        <div class="work-body">
+          <p class="work-tag">勤怠管理・給与計算</p>
+          <h3>スマホで打刻、給与と明細は自動</h3>
+          <ul class="check">
+            <li>電話番号と出勤／退勤を選ぶだけのフォーム。日付をまたぐ勤務にも対応</li>
+            <li>時給・日給・特別時給、交通費や控除を反映して給与を自動計算</li>
+            <li>本日の人数、今月の人件費、未払い額をダッシュボードで表示</li>
+            <li>個人別のA4明細と月次一覧をPDFでドライブに保存</li>
+            <li>口座情報は管理者だけが見られるシートに分離</li>
+          </ul>
+          <p class="stack"><span>Googleフォーム</span><span>スプレッドシート</span><span>GAS</span><span>PDF出力</span></p>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-img"><img src="assets/portfolio-gyomu-kiroku.png" alt="日報・業務記録の自動化の画面イメージ" loading="lazy"></div>
+        <div class="work-body">
+          <p class="work-tag">日報・業務記録</p>
+          <h3>日報はスマホで1分、月末の集計はボタン1つ</h3>
+          <ul class="check">
+            <li>運転者名、開始・終了の時刻と地点、距離、配達個数などをスマホで入力</li>
+            <li>運転者ごと・月ごとの稼働日数、距離、個数を自動集計</li>
+            <li>事故や遅延の報告があると管理者にメールで通知</li>
+            <li>保存期間を過ぎた記録は削除せず別シートへ移して保管</li>
+          </ul>
+          <p class="stack"><span>Googleフォーム</span><span>スプレッドシート</span><span>GAS</span><span>メール通知</span></p>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work-img mock-meibo" aria-hidden="true">
+          <div class="mm-card">
+            <p class="mm-h">未提出者一覧</p>
+            <div class="mm-row"><span>新人研修</span><span>A施設</span><b>未提出</b></div>
+            <div class="mm-row"><span>安全研修</span><span>B施設</span><b>未提出</b></div>
+            <div class="mm-row ok"><span>新人研修</span><span>A施設</span><b>提出済</b></div>
+            <div class="mm-mail">📧 未提出の方へリマインドを送信（毎朝8時）</div>
+          </div>
+        </div>
+        <div class="work-body">
+          <p class="work-tag">提出状況の確認</p>
+          <h3>名簿とフォーム回答を突き合わせて、未提出者に自動リマインド</h3>
+          <ul class="check">
+            <li>施設ごとのExcel名簿をドライブのフォルダに入れるだけで取り込み</li>
+            <li>表の上に題名があっても「氏名」の行を見出しとして自動で探す</li>
+            <li>表記のゆれ（全角半角・空白・中黒）をそろえてから照合</li>
+            <li>提出者一覧・未提出者一覧・要確認を自動で作成</li>
+            <li>未提出の方へのリマインドメール。二重送信の防止と送信記録つき</li>
+          </ul>
+          <p class="stack"><span>Drive API</span><span>スプレッドシート</span><span>GAS</span><span>定期実行</span></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Code ===== -->
+<section class="section section-code">
+  <div class="wrap code-grid">
+    <div>
+      <p class="eyebrow">中身もお渡しします</p>
+      <h2>ブラックボックスに<br>しない</h2>
+      <p>作ったプログラム（GAS）はお客さまのGoogleアカウントの中で動きます。コードも、使い方の説明書もすべてお渡しするので、あとから別の人が手を入れることもできます。</p>
+      <ul class="check light">
+        <li>データはお客さまのGoogleアカウント内に保存</li>
+        <li>追加のソフトや月額費用は不要</li>
+        <li>説明書つきで納品</li>
+      </ul>
+    </div>
+    <div class="editor" aria-hidden="true">
+      <div class="editor-bar"><i></i><i></i><i></i><span>Code.gs</span></div>
+      <pre id="codeType"></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Service ===== -->
+<section class="section" id="service">
+  <div class="wrap">
+    <p class="eyebrow">できること</p>
+    <h2>小さな自動化から、<br class="sp">社内用のWebアプリまで</h2>
+    <div class="svc-grid">
+      <div class="svc reveal"><h3>集計・転記の自動化</h3><p>複数のシートやファイルから集めて、人ごと・月ごとに自動でまとめます。</p></div>
+      <div class="svc reveal"><h3>フォーム連携の仕組み</h3><p>日報、受付、予約、申請。スマホから入力した内容を自動で整理します。</p></div>
+      <div class="svc reveal"><h3>勤怠・給与・シフト</h3><p>出退勤の記録から給与の計算、明細の作成、シフト表づくりまで。</p></div>
+      <div class="svc reveal"><h3>請求書・見積書のPDF</h3><p>表のデータから書類を自動で作り、メールで送るところまで。</p></div>
+      <div class="svc reveal"><h3>生成AIの組み込み</h3><p>ChatGPTやClaudeで、問い合わせ返信の下書き、文章の要約や分類を自動化。</p></div>
+      <div class="svc reveal"><h3>社内向けWebアプリ</h3><p>GASで作る、ログイン不要で社内だけで使える小さな業務アプリ。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Flow ===== -->
+<section class="section section-soft" id="flow">
+  <div class="wrap">
+    <p class="eyebrow">進め方</p>
+    <h2>ご相談から納品まで</h2>
+    <ol class="flow">
+      <li class="reveal"><span class="num">1</span><h3>お話を聞く</h3><p>今の作業の流れと、いちばん困っているところを教えてください。</p></li>
+      <li class="reveal"><span class="num">2</span><h3>内容と費用のご提案</h3><p>何をどこまで自動化するか、費用と納期をお伝えします。</p></li>
+      <li class="reveal"><span class="num">3</span><h3>作成とテスト</h3><p>見本のデータで動作を確かめてから、使い方の説明書をつけて納品します。</p></li>
+      <li class="reveal"><span class="num">4</span><h3>2週間の無料修正</h3><p>実際に使ってみて気になったところは、納品後2週間まで無料で直します。</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section" id="faq">
+  <div class="wrap narrow">
+    <p class="eyebrow">よくある質問</p>
+    <h2>よくある質問</h2>
+    <details class="faq"><summary>パソコンにくわしくなくても使えますか？</summary><p>はい。普段はフォームへの入力と、スプレッドシートのメニューのボタンを押すだけで使えるように作ります。操作の説明書もお渡しします。</p></details>
+    <details class="faq"><summary>月額の費用はかかりますか？</summary><p>Googleのアカウントがあれば、追加のソフトや月額費用はかかりません。生成AIを組み込む場合のみ、AIの利用料が別にかかります（事前にお伝えします）。</p></details>
+    <details class="faq"><summary>データはどこに保存されますか？</summary><p>お客さまご自身のGoogleアカウントの中に保存されます。こちらのサーバーにデータを預かることはありません。</p></details>
+    <details class="faq"><summary>生成AIを使って作っていますか？</summary><p>制作の補助に生成AIを使っています。動作の確認と最終チェックは自分で行い、確認した内容をお伝えしたうえで納品します。</p></details>
+    <details class="faq"><summary>法令に合った記録になりますか？</summary><p>業務記録などで求められる項目を入れて作りますが、法令への対応を保証するものではありません。正式な記載項目は管轄の役所などの資料でご確認ください。</p></details>
+    <details class="faq"><summary>返信はいつ来ますか？</summary><p>平日は夜、休日は日中に返信しています。24時間以内の返信を心がけています。</p></details>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section class="section section-soft">
+  <div class="wrap about">
+    <img src="assets/note-icon.png" alt="テマヘラシのロゴ" width="120" height="120" loading="lazy">
+    <div>
+      <p class="eyebrow">テマヘラシについて</p>
+      <h2>現場の「手間」を減らす</h2>
+      <p>物流の現場で管理の仕事をしながら、AIとGoogleのツールを使った業務の自動化に取り組んでいます。日報の打ち直しや月末の集計など、自分自身が「これは人がやらなくていい」と感じてきた作業を仕組みに変えるのが得意です。</p>
+      <p>大きなシステムを入れる前の、「いつものスプレッドシートのまま楽にしたい」というご相談を歓迎します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section class="section section-dark" id="contact">
+  <div class="wrap narrow center">
+    <p class="eyebrow">ご相談・ご依頼</p>
+    <h2>まずは、困っている作業を<br class="sp">ひとつ教えてください</h2>
+    <p class="sub">ご依頼は、ココナラから受け付けています。購入前のメッセージでのご相談も無料です。</p>
+    <div class="contact-grid">
+      <a class="contact-card" href="https://coconala.com/users/6355343" target="_blank" rel="noopener">
+        <b>ココナラ</b><span>出品の一覧を見る</span>
+      </a>
+      <a class="contact-card" href="https://coconala.com/services/4463193" target="_blank" rel="noopener">
+        <b>小さな自動化</b><span>GASとスプレッドシート</span>
+      </a>
+      <a class="contact-card" href="https://coconala.com/services/4466807" target="_blank" rel="noopener">
+        <b>業務用Webアプリ</b><span>GASで作るWebアプリ</span>
+      </a>
+    </div>
+    <p class="social">
+      <a href="https://note.com/temaherashi117" target="_blank" rel="noopener">note</a>
+      <a href="https://x.com/DuckyWebman" target="_blank" rel="noopener">X</a>
+      <a href="https://youtu.be/KcfDym9UCVA" target="_blank" rel="noopener">紹介動画</a>
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> テマヘラシ</p>
+  <p class="small">掲載している画面とデータはすべて見本です。</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
