@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soutarou07031812-cpu.github.io/temaherashi/sitemap.xml
