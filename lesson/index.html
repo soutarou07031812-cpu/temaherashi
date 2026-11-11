@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>生成AIセミナー 初心者向け｜事務を毎日1時間減らす90分講座｜テマヘラシ</title>
+<meta name="description" content="PC作業が苦手な人のための初心者向け生成AIセミナー。日報・集計・メール文をChatGPTやClaudeに任せる頼み方を、少人数のオンライン90分講座で身につけます。">
+<link rel="canonical" href="https://soutarou07031812-cpu.github.io/temaherashi/lesson/">
+<meta property="og:title" content="頼むだけ。初心者向け生成AIセミナー｜テマヘラシ">
+<meta property="og:description" content="PC作業が苦手な人のための初心者向け生成AIセミナー。日報・集計・メール文をChatGPTやClaudeに任せる頼み方を、少人数のオンライン90分講座で身につけます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://soutarou07031812-cpu.github.io/temaherashi/lesson/">
+<meta property="og:image" content="https://soutarou07031812-cpu.github.io/temaherashi/lesson/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/note-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Course", "name": "初心者向け生成AIセミナー｜毎日の事務をAIで1時間減らす90分講座", "description": "PC作業が苦手な人のための初心者向け生成AIセミナー。日報・集計・メール文をChatGPTやClaudeに任せる頼み方を、少人数のオンライン90分講座で身につけます。", "inLanguage": "ja", "url": "https://soutarou07031812-cpu.github.io/temaherashi/lesson/", "provider": {"@type": "Organization", "name": "テマヘラシ", "url": "https://soutarou07031812-cpu.github.io/temaherashi/"}, "offers": {"@type": "Offer", "price": "1000", "priceCurrency": "JPY", "category": "Paid", "url": "https://soutarou07031812-cpu.github.io/temaherashi/lesson/"}, "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "Online", "courseWorkload": "PT1H30M"}}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "パソコンが苦手でも大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "文字が打てれば大丈夫です。画面を見せながら一緒に進めます。"}}, {"@type": "Question", "name": "用意するものは？", "acceptedAnswer": {"@type": "Answer", "text": "パソコン、Googleアカウント、ChatGPTかClaudeの無料アカウントです。有料プランは不要です。"}}, {"@type": "Question", "name": "会社の資料を使ってもいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "機密情報や個人情報は入力しないでください。実習はサンプルで行います。"}}, {"@type": "Question", "name": "顔出しは必要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "不要です。画面共有も任意です。"}}]}]</script>
+<style>body{margin:0}img{max-width:100%}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;700;900&family=Anton&family=DotGothic16&display=swap">
+<style>
+/* color: 黄(面積の主役・一番明るく目に入る)×黒(文字・最大のコントラスト)×赤(申込ボタンだけ)。 layout: 画面いっぱいに流れる黄色の上に、巨大な「頼むだけ。」。その下でAIが実際に働く様子を見せる */
+:root{--bg:#fffdf0;--fg:#111111;--dim:#5c5a4a;--line:rgba(17,17,17,.18);--acc:#ff2a1f;--accfg:#ffffff;
+--disp:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;--body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;--num:"Anton","Impact",sans-serif;--mono:"DotGothic16",monospace;--dw:900}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.85;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.btn{display:inline-flex;align-items:center;gap:12px;background:var(--acc);color:var(--accfg);font-weight:800;text-decoration:none;
+  padding:18px 34px;border-radius:999px;font-size:17px;transition:transform .25s cubic-bezier(.3,1.5,.5,1),box-shadow .25s;box-shadow:0 10px 40px -10px var(--acc)}
+.btn i{font-style:normal;transition:transform .25s}.btn:hover{transform:scale(1.05)}.btn:hover i{transform:translateX(6px)}.btn:active{transform:scale(.97)}
+.btn:focus-visible,button:focus-visible{outline:3px solid var(--fg);outline-offset:4px}
+.rest section .wrap{padding-block:72px}
+.rest h2{font-family:var(--disp);font-size:clamp(30px,5.2vw,64px);line-height:1.25;margin:0 0 40px;text-wrap:balance;font-weight:var(--dw)}
+.rest h2 em{font-style:normal;color:var(--acc)}
+.take{display:grid;gap:0}
+.take>div{display:grid;grid-template-columns:minmax(64px,140px) 1fr;gap:24px;align-items:baseline;padding:28px 0;border-top:1px solid var(--line);transition:padding-left .3s}
+.take>div:hover{padding-left:16px}
+.take>div:last-child{border-bottom:1px solid var(--line)}
+.take b{font-family:var(--num);font-size:clamp(40px,7vw,88px);line-height:.9;color:var(--acc);font-weight:var(--dw)}
+.take h3{margin:0 0 4px;font-size:clamp(19px,2.4vw,26px);line-height:1.4}.take p{margin:0;color:var(--dim)}
+.time{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.time div{border:1px solid var(--line);border-radius:16px;padding:16px;min-width:0;display:flex;flex-direction:column;gap:8px;min-height:170px;transition:background .3s,color .3s,transform .3s}
+.time div:hover{background:var(--acc);color:var(--accfg);transform:translateY(-6px)}
+.time div:hover p{color:inherit}
+.time span{font-family:var(--num);font-size:22px;line-height:1;font-weight:var(--dw)}
+.time h3{margin:0;font-size:16px;line-height:1.4}.time p{margin:0;font-size:13px;color:var(--dim);line-height:1.6}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.duo p{margin:0 0 16px;color:var(--dim)}
+.duo h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:24px}
+details{border-top:1px solid var(--line);padding:16px 0}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"＋";color:var(--acc);transition:transform .2s}details[open] summary::after{transform:rotate(45deg)}
+details p{margin:8px 0 0;color:var(--dim);font-size:15px}
+.end .wrap{padding-block:96px 120px;display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.end .yen{font-family:var(--num);font-size:clamp(88px,21vw,280px);line-height:.85;font-weight:var(--dw);letter-spacing:-.02em}
+.end .yen small{font-size:.22em;font-family:var(--body);font-weight:800;letter-spacing:0}
+.end p{margin:0;color:var(--dim)}
+footer .wrap{padding-block:24px;font-size:13px;color:var(--dim);border-top:1px solid var(--line)}
+@media(max-width:820px){.time{grid-template-columns:repeat(2,1fr)}.time div{min-height:0}.duo{grid-template-columns:1fr;gap:40px}.rest section .wrap{padding-block:48px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+
+.hero{position:relative;overflow:hidden;color:#111111;background:#ffe600}
+#fx{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .wrap{position:relative;z-index:1;padding-block:20px 56px}
+.top{display:flex;justify-content:space-between;font-size:14px;letter-spacing:.12em;font-weight:700}
+h1{font-family:var(--disp);font-weight:900;font-size:clamp(72px,19.5vw,300px);line-height:.95;margin:5vh 0 0;letter-spacing:-.04em;white-space:nowrap;
+  text-shadow:0 10px 60px rgba(255,150,0,.55)}
+h1 span{display:inline-block;animation:rise .9s cubic-bezier(.2,1.2,.3,1) backwards}
+h1 span:nth-child(2){animation-delay:.07s}h1 span:nth-child(3){animation-delay:.14s}h1 span:nth-child(4){animation-delay:.21s}h1 span:nth-child(5){animation-delay:.3s}
+@keyframes rise{from{transform:translateY(60%) rotate(6deg);opacity:0}}
+.sub{font-size:clamp(18px,2.6vw,30px);font-weight:900;margin:16px 0 32px;line-height:1.5}
+.demo{display:grid;grid-template-columns:1fr 1.1fr;gap:16px;align-items:stretch}
+.card{color:#fffdf0;background:rgba(17,17,17,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:24px;padding:24px;min-width:0;box-shadow:0 30px 80px -30px rgba(90,60,0,.7)}
+.card.out{background:#ffffff;color:#111111}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.chips button{font:inherit;font-weight:700;font-size:14px;border:1.5px solid rgba(255,253,240,.4);background:none;color:#fffdf0;border-radius:999px;padding:6px 16px;cursor:pointer;transition:all .2s}
+.chips button[aria-pressed="true"]{background:#ffe600;color:#111111;border-color:#ffe600}
+.lab{font-family:var(--mono);font-size:12px;letter-spacing:.14em;opacity:.6;margin-bottom:6px}
+.memo{font-family:var(--mono);font-size:15px;line-height:1.9;white-space:pre-wrap;opacity:.9;min-height:5.7em}
+.ask{margin-top:16px;border-top:1px dashed rgba(255,243,226,.3);padding-top:16px;font-weight:700;font-size:clamp(16px,1.8vw,20px);min-height:3.6em}
+.ask::after{content:"";display:inline-block;width:.55em;height:1.1em;background:#ffe600;vertical-align:-.15em;margin-left:3px;animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.res{font-size:clamp(15px,1.7vw,19px);line-height:1.9;white-space:pre-wrap;font-weight:700;min-height:9.5em}
+.sec{font-family:var(--num);font-size:clamp(40px,6vw,72px);line-height:1;color:#ff2a1f}
+.sec small{font-family:var(--body);font-size:14px;font-weight:700;color:#5c5a4a;margin-left:8px}
+.go{margin-top:32px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;font-weight:700}
+.hero .btn{background:#ff2a1f;color:#ffffff;box-shadow:0 14px 40px -10px #ff2a1f}
+@media(max-width:760px){.demo{grid-template-columns:1fr}h1{margin-top:3vh}}
+.end{background:#ffe600}.end p{color:#111111}
+h1{margin:4vh 0 0;font-size:inherit;line-height:inherit;letter-spacing:0;white-space:normal;text-shadow:none}
+h1 .kw{display:block;font-size:clamp(14px,1.7vw,20px);font-weight:900;line-height:1.6;letter-spacing:.04em}
+h1 .big{display:block;font-weight:900;font-size:clamp(72px,19.5vw,300px);line-height:.95;letter-spacing:-.04em;white-space:nowrap;text-shadow:0 10px 60px rgba(255,150,0,.55)}
+.top a{color:inherit;text-decoration:none}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:16px 56px}
+.who ul{margin:0;padding:0;list-style:none}
+.who li{padding:16px 0 16px 36px;border-top:1px solid var(--line);position:relative;font-weight:700;font-size:clamp(16px,1.8vw,19px)}
+.who li::before{content:"";position:absolute;left:4px;top:1.45em;width:16px;height:16px;border-radius:50%;background:#ffe600;border:2px solid var(--fg)}
+.who p{margin:0 0 16px;color:var(--dim)}
+.end .note{max-width:36em;color:#111111;font-weight:700}
+.end .btn{background:#111111;color:#ffe600;box-shadow:none}
+footer a{color:inherit;margin-right:16px}
+@media(max-width:820px){.who{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+
+<section class="hero">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="top"><a href="../"><b>テマヘラシ</b></a><span>初心者向け 生成AIセミナー</span></div>
+    <h1><small class="kw">初心者向け生成AIセミナー｜毎日の事務をAIで1時間減らす</small><b class="big" aria-label="頼むだけ。"><span>頼</span><span>む</span><span>だ</span><span>け</span><span>。</span></b></h1>
+    <p class="sub">日報も、集計も、メール文も。<br>AIへの「頼み方」を90分で身につける。</p>
+    <div class="demo">
+      <div class="card">
+        <div class="chips" id="chips"></div>
+        <div class="lab">あなたの走り書き</div><div class="memo" id="memo"></div>
+        <div class="ask" id="ask" aria-live="off"></div>
+      </div>
+      <div class="card out">
+        <div class="lab">AIの答え</div><div class="res" id="res"></div>
+        <div class="sec"><span id="sec">0.0</span><small>秒で完成（実演イメージ）</small></div>
+      </div>
+    </div>
+    <div class="go"><a class="btn" href="#apply">1,000円で受講する <i>→</i></a><span>オンライン90分 ／ 定員4名 ／ 平日20:30〜</span></div>
+  </div>
+</section>
+
+<div class="rest">
+<section><div class="wrap">
+  <h2>この生成AIセミナーが<em>初心者向け</em>な理由</h2>
+  <div class="who">
+    <div>
+      <p>生成AIのセミナーや講座は、エンジニア向けや「副業で稼ぐ」向けのものが多く、事務の仕事にどう使うかまでは教えてくれないことがあります。</p>
+      <p>この講座は、ChatGPTやClaudeを触ったことがない人、触ってみたけれど仕事で使えなかった人のための入門です。専門用語は使いません。定員4名なので、分からない所はその場で聞けます。</p>
+      <p>扱うのは、日報、集計、メール文という毎日の事務だけ。講座の中で自分の手で動かすので、翌日の仕事からそのまま使えます。</p>
+    </div>
+    <ul>
+      <li>毎日の日報・報告書・集計に時間を取られている</li>
+      <li>ChatGPTやClaudeの名前は知っているが、使ったことがない</li>
+      <li>使ってみたけれど、思った答えが返ってこなかった</li>
+      <li>Excelやスプレッドシートの関数が苦手</li>
+      <li>チームのリーダーや店長で、事務より現場を見る時間を増やしたい</li>
+    </ul>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <h2>90分で、<em>これだけ</em>持ち帰れる。</h2>
+  <div class="take">
+    <div><b>01</b><div><h3>報告書・日報を整える頼み方</h3><p>箇条書きのメモを渡すだけで、そのまま出せる文章にする手順。</p></div></div>
+    <div><b>02</b><div><h3>関数を覚えない集計表</h3><p>スプレッドシートの関数や表を、AIに作ってもらう流れ。</p></div></div>
+    <div><b>03</b><div><h3>自分の業務リスト</h3><p>明日からAIに任せる作業を、講座の中で1つ決めます。</p></div></div>
+    <div><b>04</b><div><h3>頼み方のひな形とワークシート</h3><p>講座で使ったものは、終わったあとそのままお渡しします。</p></div></div>
+  </div>
+</div></section>
+<section><div class="wrap">
+  <h2>当日の<em>90分</em></h2>
+  <div class="time">
+    <div><span>0'</span><h3>はじめに</h3><p>減らしたい作業を聞きます</p></div>
+    <div><span>10'</span><h3>頼み方の基本</h3><p>うまくいく例と、いかない例</p></div>
+    <div><span>30'</span><h3>実習① 報告書</h3><p>メモから日報を整える</p></div>
+    <div><span>50'</span><h3>実習② 集計表</h3><p>関数をAIに作ってもらう</p></div>
+    <div><span>70'</span><h3>実習③ 業務リスト</h3><p>任せる作業を1つ決める</p></div>
+    <div><span>85'</span><h3>質問タイム</h3><p>残った疑問をその場で</p></div>
+  </div>
+</div></section>
+<section><div class="wrap duo">
+  <div><h2>教えるのは、<em>現場の人</em>。</h2>
+    <p>物流の現場で管理の仕事をしながら、ChatGPTとClaudeで自分の事務作業を減らしてきました。プログラマーではありません。</p>
+    <p>詳しくない人がつまずく所を自分も通ってきたので、専門用語を使わずに説明します。「テマヘラシ」の屋号で、勤怠・給与や日報などの業務アプリも作っています。</p></div>
+  <div><h2>よくある質問</h2>
+    <details open><summary>パソコンが苦手でも大丈夫ですか？</summary><p>文字が打てれば大丈夫です。画面を見せながら一緒に進めます。</p></details>
+    <details><summary>用意するものは？</summary><p>パソコン、Googleアカウント、ChatGPTかClaudeの無料アカウントです。有料プランは不要です。</p></details>
+    <details><summary>会社の資料を使ってもいいですか？</summary><p>機密情報や個人情報は入力しないでください。実習はサンプルで行います。</p></details>
+    <details><summary>顔出しは必要ですか？</summary><p>不要です。画面共有も任意です。</p></details>
+  </div>
+</div></section>
+<section class="end" id="apply"><div class="wrap">
+  <p>モニター価格（レビュー10件まで）／ オンライン90分 ／ 定員4名 ／ 平日20:30〜</p>
+  <div class="yen">1,000<small>円</small></div>
+  <p class="note">初回は2026年11月下旬に開講する予定で、いま申込ページを準備しています。日程が決まったら、このページとXでお知らせします。</p>
+  <a class="btn" href="https://x.com/DuckyWebman" target="_blank" rel="noopener">Xで開講のお知らせを受け取る <i>→</i></a>
+</div></section>
+<footer><div class="wrap"><a href="../">テマヘラシ トップ（業務アプリの制作例）</a><a href="https://note.com/temaherashi117" target="_blank" rel="noopener">note</a><a href="https://x.com/DuckyWebman" target="_blank" rel="noopener">X</a><br>© 2026 テマヘラシ ／ 画面内の実演は見本です。</div></footer>
+</div>
+
+<script>
+(function(){ // 背景：流れる色（WebGL）
+const c=document.getElementById('fx');const gl=c.getContext('webgl');if(!gl)return;
+const vs='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+const fs=`precision highp float;uniform vec2 r;uniform float t;
+float n(vec2 p){return sin(p.x)*sin(p.y);}
+void main(){vec2 u=gl_FragCoord.xy/r;vec2 p=u*vec2(r.x/r.y,1.)*2.2;
+ for(int i=1;i<5;i++){float f=float(i);p+=vec2(sin(p.y*1.3*f+t*.35+f),cos(p.x*1.1*f-t*.3+f*1.7))*.42/f;}
+ float a=.5+.5*n(p*1.2+t*.1);float b=.5+.5*n(p.yx*.9-t*.13+2.);
+ vec3 c1=vec3(1.,.90,0.),c2=vec3(1.,.74,0.),c3=vec3(1.,.50,0.),c4=vec3(1.,1.,.72);
+ vec3 col=mix(c1,c2,smoothstep(.2,.8,a));col=mix(col,c3,smoothstep(.6,.98,b)*.55);col=mix(col,c4,pow(a*b,3.)*.9);
+ col*=.96+.04*sin(gl_FragCoord.y*1.5);gl_FragColor=vec4(col,1.);}`;
+function sh(t,s){const o=gl.createShader(t);gl.shaderSource(o,s);gl.compileShader(o);return o}
+const pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);gl.useProgram(pr);
+gl.bindBuffer(gl.ARRAY_BUFFER,gl.createBuffer());gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,1,1]),gl.STATIC_DRAW);
+const l=gl.getAttribLocation(pr,'p');gl.enableVertexAttribArray(l);gl.vertexAttribPointer(l,2,gl.FLOAT,false,0,0);
+const ur=gl.getUniformLocation(pr,'r'),ut=gl.getUniformLocation(pr,'t');
+function rs(){const d=Math.min(devicePixelRatio,1.5);c.width=c.clientWidth*d;c.height=c.clientHeight*d;gl.viewport(0,0,c.width,c.height);gl.uniform2f(ur,c.width,c.height)}
+rs();addEventListener('resize',rs);const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+(function f(now){gl.uniform1f(ut,now/1000);gl.drawArrays(gl.TRIANGLE_STRIP,0,4);if(!still)requestAnimationFrame(f)})(0);
+})();
+(function(){ // 実演
+const D=[
+ {k:'日報',memo:'9時〜 A社納品 遅れ15分\n午後 問い合わせ1件 再配達済\n明日 車両点検',ask:'このメモを、上司に出す日報にして',
+  res:'【本日の業務報告】\n・A社への納品を完了（交通事情により15分遅れ）\n・午後にお問い合わせ1件、再配達で対応済み\n・明日は車両点検を予定しています'},
+ {k:'集計',memo:'月 42件 / 火 38件 / 水 51件\n木 47件 / 金 55件',ask:'合計と1日の平均を出して。表計算の式も教えて',
+  res:'合計 233件 ／ 1日平均 46.6件\n最多は金曜の55件、最少は火曜の38件\n\n貼れる式：=SUM(B2:B6)\n　　　　　=AVERAGE(B2:B6)'},
+ {k:'メール',memo:'来週の会議 火曜→木曜に変更\n15時 場所同じ ごめん',ask:'これを丁寧なお知らせメールにして',
+  res:'件名：【日程変更】来週の定例会議について\n\n来週の会議を、火曜から木曜の15時に\n変更させてください。場所は変わりません。\n急なお願いで申し訳ありません。'}];
+const $=id=>document.getElementById(id),chips=$('chips'),memo=$('memo'),ask=$('ask'),res=$('res'),sec=$('sec');
+let run=0,auto=true;const wait=ms=>new Promise(r=>setTimeout(r,ms));
+D.forEach((d,i)=>{const b=document.createElement('button');b.type='button';b.id='chip'+i;b.textContent=d.k;b.onclick=()=>{auto=false;play(i)};chips.appendChild(b)});
+const G='▓▒░#%&@＊■□◆';
+async function play(i){const me=++run,d=D[i];[...chips.children].forEach((b,j)=>b.setAttribute('aria-pressed',j===i));
+ memo.textContent=d.memo;ask.textContent='';res.textContent='';sec.textContent='0.0';
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches){ask.textContent=d.ask;res.textContent=d.res;sec.textContent='3.2';return}
+ await wait(500);for(let n=1;n<=d.ask.length;n++){if(me!==run)return;ask.textContent=d.ask.slice(0,n);await wait(55)}
+ await wait(450);const t0=performance.now(),L=d.res.length;
+ for(let n=0;n<=L;n+=2){if(me!==run)return;let s=d.res.slice(0,n);for(let k=0;k<6&&n+k<L;k++){const ch=d.res[n+k];s+=ch==='\n'?'\n':G[Math.random()*G.length|0]}
+  res.textContent=s;sec.textContent=((performance.now()-t0)/1000).toFixed(1);await wait(28)}
+ res.textContent=d.res;await wait(3600);if(me===run&&auto)play((i+1)%D.length)}
+play(0);
+})();
+</script>
+</body>
+</html>
